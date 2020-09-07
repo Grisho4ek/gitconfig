@@ -1,0 +1,21 @@
+[user]
+	email = shevchenko.grygorii@gmail.com
+	name = Grygorii
+[alias]
+	ci = commit
+	br = branch
+	co = checkout
+	st = status
+	p-r = pull-request
+	#
+	# Working with branches
+	#
+
+	# Get the current branch name (not so useful in itself, but used in
+	# other aliases)
+	brn = "!git rev-parse --abbrev-ref HEAD"
+	# Push the current branch to the remote "origin", and set it to track
+	# the upstream branch
+	publish = "!git push -u origin $(git brn)"
+	# Delete the remote version of the current branch
+	unpublish = "!git push origin :$(git brn)"
