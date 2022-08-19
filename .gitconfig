@@ -19,3 +19,7 @@
 	publish = "!git push -u origin $(git brn)"
 	# Delete the remote version of the current branch
 	unpublish = "!git push origin :$(git brn)"
+	
+	# Delete all local branches that have been merged to main branch
+	dbrn = "!git remote show origin | grep 'HEAD' | cut -d':' -f2 | sed -e 's/^ *//g' -e 's/ *$//g'"
+	sync = "!git branch --merged $(git dbrn) | grep -v $(git dbrn) | xargs -n 1 -r git branch -d" 
