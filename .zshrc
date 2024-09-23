@@ -4,8 +4,6 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-
-
 # Find and set branch name var if in git repository.
 function git_branch_name()
 {
